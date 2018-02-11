@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>send</title>
+
+<input type="file" id="file">
+
+<form action="http://localhost:20000/test" method="POST">
+  <input type="hidden" name="filename">
+  <input type="hidden" name="content">
+  <input type="submit" value="send" disabled>
+</form>
+
+<script>
+document.querySelector('#file').addEventListener('change', e => {
+  const fr = new FileReader()
+  document.querySelector('[name=filename]').value = e.target.files[0].name
+  fr.addEventListener('load', e => {
+    document.querySelector('[name=content]').value = e.target.result
+    document.querySelector('[type=submit]').disabled = false
+  })
+  fr.readAsDataURL(e.target.files[0])
+})
+</script>

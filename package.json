@@ -1,0 +1,10 @@
+{
+  "name": "nodejs-test-file-save",
+  "version": "0.0.1",
+  "main": "main.js",
+  "author": "sii",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.16.2"
+  }
+}
